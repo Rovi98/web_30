@@ -56,6 +56,13 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-left: 10px; /* Add some space between the last input and the button */
 }
 
+.disabled {
+    opacity: 0.5; /* Make the image appear disabled */
+    pointer-events: none; /* Prevent click events */
+    cursor: not-allowed; /* Change cursor to not-allowed when disabled */
+
+}
+
 #infoButton {
     position: absolute; /* Position the button absolutely */
     top: 20px; /* Distance from the top */
@@ -113,7 +120,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .floating-window.show {
     opacity: 1; /* Fully visible */
 }
-
 
 #closeButton {
     background-color: #b22222; /* Red background */

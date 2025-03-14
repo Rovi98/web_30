@@ -13,24 +13,29 @@
         </div>
         <div class="input-area">
             <input type="number" id="input1" placeholder="-" min="0" max="9">
-            <input type="number" id="input2" placeholder="-" min="0" max="9">
-            <input type="number" id="input3" placeholder="-" min="0" max="9">
-            <input type="number" id="input4" placeholder="-" min="0" max="9">
-            <img src="validate.png" alt="Validate" id="validateButton" class="validate-button"> <!-- Use an image as the button -->
+            <input type="number" id="input2" placeholder="-" min="0" max="9" disabled>
+            <input type="number" id="input3" placeholder="-" min="0" max="9" disabled>
+            <input type="number" id="input4" placeholder="-" min="0" max="9" disabled>
+            <img src="validate.png" alt="Validate" id="validateButton" class="validate-button disabled"> <!-- Use an image as the button -->
         </div>
         <p id="errorMessage" class="error"></p> <!-- Error message -->
         <div class="buttons">
             <button onclick="redirectToPage('page1.html')">Pista nº 1<br>18/3</button>
-            <button onclick="redirectToPage('page2.html')">Pista nº 2<br>19/3</button>
-            <button onclick="redirectToPage('page3.html')">Pista nº 3<br>20/3</button>
-            <button onclick="redirectToPage('page4.html')">Pista nº 4<br>21/3</button>
+            <button onclick="redirectToPage('page2.html')" disabled>Pista nº 2<br>19/3</button>
+            <button onclick="redirectToPage('page3.html')" disabled>Pista nº 3<br>20/3</button>
+            <button onclick="redirectToPage('page4.html')" disabled>Pista nº 4<br>21/3</button>
             <button id="infoButton">?</button> <!-- New button for info -->
         </div>
     </div>
     
     <div id="floatingWindow" class="floating-window" style="display: none;">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <button id="closeButton">Close</button> <!-- Button to close the floating window -->
+        <p>Bon dia Joan i Nuri!<br><br>
+            Primer de tot deixeu-nos felicitar-vos pels 30 anys de casats.<br><br>
+            Aquest any, per celebrar aquesta data tan especial, us hem preparat una sèrie de pistes per aconseguir un regal molt especial.<br><br>
+            El proper dissabte 22 de Març es durà a terme un esdeveniment per celebrar aquest aniversari (guardeu-vos la data), però per poder tenir més informació al respecte us haureu de connectar dia rere dia en aquesta web per tal de poder descobrir la informació necessària per anar-hi.<br><br>
+            Cada dia podreu desbloquejar una pista, amb la qual obtindreu un número que haureu d'introduir en la pantalla inicial. Un cop resolgueu les 4 pistes i tingueu els 4 números, rebreu la infomació final.<br><br>
+            Molta sort en el joc.</p>
+        <button id="closeButton">Tancar</button> <!-- Button to close the floating window -->
     </div>
 
     <script src="script.js"></script>

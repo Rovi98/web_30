@@ -3,6 +3,8 @@ function redirectToPage(page) {
 }
 
 document.getElementById('validateButton').onclick = function() {
+    if (this.classList.contains('disabled')) return; // Prevent action if disabled
+
     const input1 = document.getElementById('input1').value;
     const input2 = document.getElementById('input2').value;
     const input3 = document.getElementById('input3').value;
@@ -12,7 +14,7 @@ document.getElementById('validateButton').onclick = function() {
     if (input1 === '1' && input2 === '2' && input3 === '3' && input4 === '4') {
         redirectToPage('success.html');
     } else {
-        errorMessage.textContent = 'Incorrect code. Please try again.';
+        errorMessage.textContent = 'Codi incorrecte, hi ha alguna pista que no ho heu fet del tot bé!';
     }
 };
 
