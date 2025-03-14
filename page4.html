@@ -14,7 +14,8 @@
             grid-template-columns: repeat(4, 1fr); /* 4 columns */
             width: 300px; /* Set width to a fixed size */
             margin: 0 auto; /* Center the puzzle */
-            gap: 0px; /* Space between pieces */
+            gap: 2px; /* Space between pieces */
+
         }
         .puzzle-piece {
             width: 100%; /* Full width of the grid cell */
@@ -24,6 +25,8 @@
             background-size: 400%; /* Set background size to accommodate the puzzle pieces */
             background-repeat: no-repeat; /* Prevent background from repeating */
             cursor: pointer; /* Change cursor to pointer for interactivity */
+
+
         }
     </style>
 </head>
@@ -68,7 +71,9 @@
                     selectedPiece = null;
                 } else {
                     // Select the piece
-                    selectedPiece = this;
+                selectedPiece = this;
+                this.classList.add('selected'); // Add a red frame around the selected piece
+
                 }
             });
         });
