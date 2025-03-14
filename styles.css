@@ -56,7 +56,19 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-left: 10px; /* Add some space between the last input and the button */
 }
 
-/* Style for the extra page buttons */
+#infoButton {
+    position: absolute; /* Position the button absolutely */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    background-color: #b22222; /* Red background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Font size */
+}
+
 .buttons {
     margin-top: 20px; /* Add some space above the buttons */
 }
@@ -83,7 +95,40 @@ input[type="number"]::-webkit-outer-spin-button {
     opacity: 0.5; /* Optional: make the button appear grayed out */
 }
 
-/* Style for the error message */
+.floating-window {
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease; /* Transition for fade effect */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    color: black; /* Text color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.floating-window.show {
+    opacity: 1; /* Fully visible */
+}
+
+
+#closeButton {
+    background-color: #b22222; /* Red background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#closeButton:hover {
+    background-color: #550808; /* Darker red on hover */
+}
+
 #errorMessage {
     color: red; /* Set text color to red */
     font-size: 24px; /* Increase font size for better visibility */

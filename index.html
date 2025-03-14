@@ -24,11 +24,15 @@
             <button onclick="redirectToPage('page2.html')">Pista nº 2<br>19/3</button>
             <button onclick="redirectToPage('page3.html')">Pista nº 3<br>20/3</button>
             <button onclick="redirectToPage('page4.html')">Pista nº 4<br>21/3</button>
-            <!--<button onclick="redirectToPage('page2.html')" disabled>Pista nº 2<br>19/3</button>
-            <button onclick="redirectToPage('page3.html')" disabled>Pista nº 3<br>20/3</button>
-            <button onclick="redirectToPage('page4.html')" disabled>Pista nº 4<br>21/3</button>-->
+            <button id="infoButton">?</button> <!-- New button for info -->
         </div>
     </div>
+    
+    <div id="floatingWindow" class="floating-window" style="display: none;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <button id="closeButton">Close</button> <!-- Button to close the floating window -->
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -15,3 +15,28 @@ document.getElementById('validateButton').onclick = function() {
         errorMessage.textContent = 'Incorrect code. Please try again.';
     }
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+    const floatingWindow = document.getElementById('floatingWindow');
+    floatingWindow.style.display = 'block'; // Set display to block first
+    setTimeout(() => {
+        floatingWindow.classList.add('show'); // Then add the show class for fade effect
+    }, 10); // Small timeout to allow the display change to take effect
+});
+
+document.getElementById('infoButton').addEventListener('click', function() {
+    const floatingWindow = document.getElementById('floatingWindow');
+    floatingWindow.style.display = 'block'; // Show the floating window
+    setTimeout(() => {
+        floatingWindow.classList.add('show'); // Add the show class for fade effect
+    }, 10); // Small timeout to allow the display change to take effect
+});
+
+
+document.getElementById('closeButton').addEventListener('click', function() {
+    const floatingWindow = document.getElementById('floatingWindow');
+    floatingWindow.classList.remove('show'); // Hide with fade effect
+    setTimeout(() => {
+        floatingWindow.style.display = 'none'; // Set display to none after fade out
+    }, 500); // Match the timeout with the CSS transition duration
+});
