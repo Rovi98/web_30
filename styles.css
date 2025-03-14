@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black; /* Set background to black */
+    color: white; /* Set text color to white for better visibility */
+    margin: 0; /* Remove default margin */
+}
+
+.container {
+    text-align: center;
+}
+
+.candles {
+    margin-bottom: 20px;
+}
+
+.candle {
+    height: 50vh; /* Set height to 50% of the viewport height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.input-area {
+    margin-bottom: 20px;
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+input[type="number"] {
+    width: 60px; /* Set a shorter width for the input fields */
+    height: 80px; /* Set height to make the input fields larger */
+    font-size: 36px; /* Increase font size for better visibility */
+    margin: 0 5px; /* Add margin between inputs */
+    padding: 5px;
+    color: white; /* Set text color to white */
+    background-color: transparent; /* Make background transparent */
+    border: none; /* Remove the border */
+    outline: none; /* Remove the outline on focus */
+    text-align: center; /* Center the text in the input field */
+}
+
+/* Hide the spinner in Chrome, Safari, and Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.validate-button {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    width: 80px; /* Set width to match input fields */
+    height: 80px; /* Set height to match input fields */
+    margin-left: 10px; /* Add some space between the last input and the button */
+}
+
+/* Style for the extra page buttons */
+.buttons {
+    margin-top: 20px; /* Add some space above the buttons */
+}
+
+.buttons button {
+    background-color: #b22222; /* Red background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px 20px; /* Padding for the button */
+    font-size: 18px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    margin: 5px; /* Margin between buttons */
+}
+
+.buttons button:hover {
+    background-color: #550808; /* Darker red on hover */
+}
+
+/* Change cursor for disabled buttons */
+.buttons button:disabled {
+    cursor: not-allowed; /* Change cursor to prohibited when button is disabled */
+    opacity: 0.5; /* Optional: make the button appear grayed out */
+}
+
+/* Style for the error message */
+#errorMessage {
+    color: red; /* Set text color to red */
+    font-size: 24px; /* Increase font size for better visibility */
+    margin-top: 10px; /* Add some space above the error message */
+}
