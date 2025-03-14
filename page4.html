@@ -15,7 +15,6 @@
             width: 300px; /* Set width to a fixed size */
             margin: 0 auto; /* Center the puzzle */
             gap: 2px; /* Space between pieces */
-
         }
         .puzzle-piece {
             width: 100%; /* Full width of the grid cell */
@@ -25,8 +24,9 @@
             background-size: 400%; /* Set background size to accommodate the puzzle pieces */
             background-repeat: no-repeat; /* Prevent background from repeating */
             cursor: pointer; /* Change cursor to pointer for interactivity */
-
-
+        }
+        .selected {
+            filter: brightness(70%); /* Darken the image when selected */
         }
     </style>
 </head>
@@ -67,13 +67,14 @@
                     this.style.backgroundPosition = selectedPiece.style.backgroundPosition;
                     selectedPiece.style.backgroundPosition = tempPosition;
 
+                    // Remove the darkening effect from the previously selected piece
+                    selectedPiece.classList.remove('selected');
                     // Deselect the piece
                     selectedPiece = null;
                 } else {
                     // Select the piece
-                selectedPiece = this;
-                this.classList.add('selected'); // Add a red frame around the selected piece
-
+                    selectedPiece = this;
+                    this.classList.add('selected'); // Darken the image of the selected piece
                 }
             });
         });
