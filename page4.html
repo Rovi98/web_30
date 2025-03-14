@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pista nº 4 - Puzzle</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            text-align: center;
+        }
+        .puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            width: 300px; /* Set width to a fixed size */
+            margin: 0 auto; /* Center the puzzle */
+            gap: 0px; /* Space between pieces */
+        }
+        .puzzle-piece {
+            width: 100%; /* Full width of the grid cell */
+            height: 0; /* Set height to 0 initially */
+            padding-top: 100%; /* Maintain 1:1 aspect ratio */
+            background-image: url('5_2.jpg'); /* Use the image as background */
+            background-size: 400%; /* Set background size to accommodate the puzzle pieces */
+            background-repeat: no-repeat; /* Prevent background from repeating */
+            cursor: pointer; /* Change cursor to pointer for interactivity */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pista nº 4</h1>
+        <div class="puzzle-container" id="puzzleContainer">
+            <!-- Create shuffled puzzle pieces -->
+            <div class="puzzle-piece" style="background-position: 33% 0;" data-index="1"></div>
+            <div class="puzzle-piece" style="background-position: 100% 0;" data-index="3"></div>
+            <div class="puzzle-piece" style="background-position: 0 33%;" data-index="4"></div>
+            <div class="puzzle-piece" style="background-position: 66% 0;" data-index="2"></div>
+            <div class="puzzle-piece" style="background-position: 0 0;" data-index="0"></div>
+            <div class="puzzle-piece" style="background-position: 33% 33%;" data-index="5"></div>
+            <div class="puzzle-piece" style="background-position: 100% 33%;" data-index="7"></div>
+            <div class="puzzle-piece" style="background-position: 66% 33%;" data-index="6"></div>
+            <div class="puzzle-piece" style="background-position: 0 66%;" data-index="8"></div>
+            <div class="puzzle-piece" style="background-position: 33% 66%;" data-index="9"></div>
+            <div class="puzzle-piece" style="background-position: 100% 66%;" data-index="11"></div>
+            <div class="puzzle-piece" style="background-position: 66% 66%;" data-index="10"></div>
+            <div class="puzzle-piece" style="background-position: 0 100%;" data-index="12"></div>
+            <div class="puzzle-piece" style="background-position: 33% 100%;" data-index="13"></div>
+            <div class="puzzle-piece" style="background-position: 100% 100%;" data-index="15"></div>
+            <div class="puzzle-piece" style="background-position: 66% 100%;" data-index="14"></div>
+        </div>
+        <div class="buttons">
+            <button onclick="window.history.back();">Torna</button> <!-- Styled as a button -->
+        </div>
+    </div>
+    <script>
+        let selectedPiece = null;
+
+        document.querySelectorAll('.puzzle-piece').forEach(piece => {
+            piece.addEventListener('click', function() {
+                if (selectedPiece) {
+                    // Swap positions
+                    const tempPosition = this.style.backgroundPosition;
+                    this.style.backgroundPosition = selectedPiece.style.backgroundPosition;
+                    selectedPiece.style.backgroundPosition = tempPosition;
+
+                    // Deselect the piece
+                    selectedPiece = null;
+                } else {
+                    // Select the piece
+                    selectedPiece = this;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
