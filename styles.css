@@ -82,7 +82,21 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .buttons {
     margin-top: 20px; /* Add some space above the buttons */
+    display: flex; /* Ensure buttons are displayed as flex items */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    justify-content: center; /* Center the buttons */
 }
+
+@media (max-width: 600px) {
+    .buttons button {
+        width: 48%; /* Adjust width to fit two buttons in a row */
+        margin-bottom: 10px; /* Add margin below buttons */
+    }
+    #infoButton {
+        width: 80px; /* Fixed width for the info button */
+    }
+}
+
 
 .buttons button {
     background-color: #b22222; /* Red background */
