@@ -42,6 +42,10 @@ input[type="number"] {
     text-align: center; /* Center the text in the input field */
 }
 
+a {
+    color: lightgreen; /* Change hyperlink color to light green */
+}
+
 /* Hide the spinner in Chrome, Safari, and Edge */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {

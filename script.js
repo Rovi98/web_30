@@ -11,7 +11,7 @@ document.getElementById('validateButton').onclick = function() {
     const input4 = document.getElementById('input4').value;
     const errorMessage = document.getElementById('errorMessage');
 
-    if (input1 === '1' && input2 === '2' && input3 === '3' && input4 === '4') {
+    if (input1 === '2' && input2 === '7' && input3 === '7' && input4 === '5') {
         redirectToPage('success.html');
     } else {
         errorMessage.textContent = 'Codi incorrecte, hi ha alguna pista que no ho heu fet del tot bé!';
