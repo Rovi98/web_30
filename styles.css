@@ -119,7 +119,10 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
     z-index: 1000; /* Ensure it appears above other content */
+    max-height: 80vh; /* Limit height to 80% of the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
 }
+
 
 .floating-window.show {
     opacity: 1; /* Fully visible */
