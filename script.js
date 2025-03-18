@@ -62,8 +62,14 @@ function enablePistaButtons() {
     buttons.forEach((button, index) => {
         if (currentDate >= pistaDates[index]) {
             button.disabled = false;
+            document.getElementById(`input${index + 1}`).disabled = false; // Enable corresponding input field
         }
     });
+
+    // Enable the validate button if the last button is enabled
+    if (currentDate >= pistaDates[3]) {
+        document.getElementById('validateButton').classList.remove('disabled');
+    }
 }
 
 // Call the function when the page loads
