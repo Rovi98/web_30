@@ -34,7 +34,6 @@ document.getElementById('infoButton').addEventListener('click', function() {
     }, 10); // Small timeout to allow the display change to take effect
 });
 
-
 document.getElementById('closeButton').addEventListener('click', function() {
     const floatingWindow = document.getElementById('floatingWindow');
     floatingWindow.classList.remove('show'); // Hide with fade effect
@@ -42,3 +41,32 @@ document.getElementById('closeButton').addEventListener('click', function() {
         floatingWindow.style.display = 'none'; // Set display to none after fade out
     }, 500); // Match the timeout with the CSS transition duration
 });
+
+// Function to enable Pista buttons based on the current date
+function enablePistaButtons() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    
+    // Define the dates for each Pista button
+    const pistaDates = [
+        new Date(year, 2, 18), // Pista nº 1: 18/3
+        new Date(year, 2, 19), // Pista nº 2: 19/3
+        new Date(year, 2, 20), // Pista nº 3: 20/3
+        new Date(year, 2, 21)  // Pista nº 4: 21/3
+    ];
+
+    // Get all Pista buttons
+    const buttons = document.querySelectorAll('.buttons button');
+
+    // Enable buttons based on the current date
+    buttons.forEach((button, index) => {
+        if (currentDate >= pistaDates[index]) {
+            button.disabled = false;
+        }
+    });
+}
+
+// Call the function when the page loads
+window.onload = function() {
+    enablePistaButtons();
+};
