@@ -11,12 +11,44 @@
         <div class="candles">
             <img src="candle.png" alt="Candle" class="candle"> <!-- Candle image -->
         </div>
-        <h1>Success!</h1>
-        <p>Your action was successful.</p>
+        <h1>Heu desxifrat el codi!</h1>
+        <p>Moltes delicitats, heu set capaços de resoldre les 4 pistes que us hem posat i heu desxifrat el codi.<br><br>
+            Tal com us varem dir, aquest dissabte heu d'estar a punt, vestits de gala, però a quina hora?</p>
+        <h1>A les 13:45.</h1>
+        <p>Perquè us recullin per anar a: </p>
+        <h1>AAA AAAAAAA</h1>
         <div class="buttons">
             <button onclick="window.history.back();">Torna</button> <!-- Go back to the previous page -->
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        // Function to change each letter of the word randomly
+        function changeLetters() {
+            const targetElement = document.querySelector('h1:last-of-type'); // Select the last <h1> element
+            const originalText = "AAA AAAAAAA"; // Original text
+            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{};':\"\\|,.<>?/"; // Possible letters
+
+
+            setInterval(() => {
+                let newText = '';
+                for (let i = 0; i < originalText.length; i++) {
+                    // Randomly change each letter
+                    if(originalText[i]!=" "){
+                        newText += letters.charAt(Math.floor(Math.random() * letters.length));
+                    }
+                    else{
+                        newText += " ";
+                    }
+                }
+                targetElement.textContent = newText; // Update the <h1> element
+            }, 200); // Change every 100 milliseconds
+        }
+
+        // Call the function when the page loads
+        window.onload = function() {
+            changeLetters(); // Start changing letters
+        };
+    </script>
+
 </body>
 </html>
